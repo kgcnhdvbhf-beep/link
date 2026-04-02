@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mostafa Hosny - Student at Faculty of Computers and Information. Connect with me on social media.">
+  <meta name="theme-color" content="#000000">
+  <title>Mostafa Hosny</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- زر تغيير الثيم -->
+  <input type="checkbox" id="toggle-theme">
+  <label for="toggle-theme" class="toggle-label">
+    <i class="fas fa-moon"></i>
+    <i class="fas fa-sun"></i>
+  </label>
+
+  <!-- زر تغيير اللغة -->
+  <button id="toggle-language" class="language-toggle">
+    <i class="fas fa-language"></i>
+  </button>
+
+  <!-- المحتوى -->
+  <div class="wrapper">
+    <div class="container">
+
+      <!-- الصورة -->
+      <div class="avatar-border">
+        <img src="img/a5c45947-a0bc-401e-9918-0225078fd0f8.jpg" class="avatar" alt="avatar">
+      </div>
+
+      <!-- الاسم -->
+      <div class="nome">Mostafa Hosny</div>
+
+      <!-- البايو -->
+      <div class="bio">Student at Faculty of Computers and Information</div>
+
+      <!-- السوشيال -->
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/17syBs1WkB/" class="facebook-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/mostafa_.hosny?igsh=eWg0eTliOWJjc3dm" class="instagram-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@30k82?_r=1&_t=ZS-95CEfzScZgi" class="tiktok-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/qr/TVX2MT4FR6ZXA1" class="whatsapp-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtube.com/@mostafahosny3303?si=bho1tmptG_qYRSnR" class="youtube-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/mostafa-hosny-9958153a7?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="linkedin-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/kgcnhdvbhf-beep" class="github-icon" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Language Toggle Script -->
+  <script>
+    const langBtn = document.getElementById('toggle-language');
+    const bioEl = document.querySelector('.bio');
+    const nomeEl = document.querySelector('.nome');
+    const bioEN = 'Student at Faculty of Computers and Information';
+    const bioAR = '\u0637\u0627\u0644\u0628 \u0641\u064a \u0643\u0644\u064a\u0629 \u0627\u0644\u062d\u0627\u0633\u0628\u0627\u062a \u0648\u0627\u0644\u0645\u0639\u0644\u0648\u0645\u0627\u062a';
+    const nameEN = 'Mostafa Hosny';
+    const nameAR = '\u0645\u0635\u0637\u0641\u0649 \u062d\u0633\u0646\u064a';
+    let isArabic = false;
+
+    langBtn.addEventListener('click', function () {
+      isArabic = !isArabic;
+      if (isArabic) {
+        document.documentElement.setAttribute('dir', 'rtl');
+        document.documentElement.setAttribute('lang', 'ar');
+        bioEl.textContent = bioAR;
+        nomeEl.textContent = nameAR;
+        langBtn.classList.add('active');
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+        document.documentElement.setAttribute('lang', 'en');
+        bioEl.textContent = bioEN;
+        nomeEl.textContent = nameEN;
+        langBtn.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+
+</html>
